@@ -1,0 +1,35 @@
+customer = {
+    "first_name": "",
+    "last_name": "",
+    "age": "",
+    "age_verified": False,
+    "address": ""
+    }
+
+first_name = input("Hello new user, enter your first name to begin: ")
+customer["first_name"] = f"{first_name}"
+
+last_name = input("Enter your last name: ")
+customer["last_name"] = f"{last_name}"
+
+age = input(f"""Hello, {customer["first_name"]} {customer["last_name"]}!
+Now, enter your age so we can check if you're older enough:  """)
+
+age = (f"{age}")
+customer["age"] = f"{age}"
+
+if int(age) >= 18:
+    customer["age_verified"] = True
+    print(f"At {age}, you can continue.")
+else:
+    timegap = 18 - int(age)
+    print(f"""Sorry, you are not old enough at {age}.
+You can come back in {timegap} years!""")
+
+
+if customer["age_verified"] == False:
+    exit()
+else:
+    address = input("Enter your address:")
+    customer["address"] = f"{address}"
+    print(f"You live at {address}.")
